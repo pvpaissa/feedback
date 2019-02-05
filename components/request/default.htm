@@ -1,0 +1,20 @@
+<div class="basic-page feedback-page">
+    <div class="container">
+        <div class="page-title">
+            <h1>Request Form{% if request_type %}<span class="text-primary"> {{ request_type }}</span>{% endif %}</h1>
+            <div class="sub-box"></div>
+        </div>
+
+        {% partial __SELF__~'::flash-message' %}
+
+        {% partial __SELF__~'::'~request_type %}
+
+        <div class="form-agree">
+            <label for="agree" class="text-white">Agree</label>
+            <input type="text" id="agree" name="agree" tabindex="-1" autocomplete="off">
+        </div>
+
+        <button class="btn btn-outline-primary btn-lg" type="submit">Submit Feedback</button>
+        {{ form_close() }}
+    </div>
+</div>
